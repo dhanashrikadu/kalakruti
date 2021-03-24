@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sgbauni_dbkalakruti" Class="dbDatabaseDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DHANUPC;Initial Catalog=sgbauni_dbkalakruti;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="sgbauni_dbkalakrutiConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AcceptItemList" Member="AcceptItemLists">
+    <Type Name="AcceptItemList">
+      <Column Name="AcceptId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustorderId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cartID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeliBoy_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Locations" Member="Locations">
+    <Type Name="Location">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Discription" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mst_Advertisement" Member="mst_Advertisements">
+    <Type Name="mst_Advertisement">
+      <Column Name="imgID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="imgurl" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="[Category ID]" Member="Category_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstArea" Member="mstAreas">
+    <Type Name="mstArea">
+      <Column Name="AreaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NagarName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Pincode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Lattitude" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="CityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstCategory" Member="mstCategories">
+    <Type Name="mstCategory">
+      <Column Name="CatId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarathiCatagory" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IsMarathi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstCity" Member="mstCities">
+    <Type Name="mstCity">
+      <Column Name="CityId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstCustomerDtl" Member="mstCustomerDtls">
+    <Type Name="mstCustomerDtl">
+      <Column Name="CustId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Areacode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustAddress" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CurrentLocation" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CustLName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstDeliveryBoyDtl" Member="mstDeliveryBoyDtls">
+    <Type Name="mstDeliveryBoyDtl">
+      <Column Name="DeliveryBoyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DeliverBoyRegNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DeliverBoyName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DeliverBoyOwnAdhar" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="DeliverBoyAddr" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Lattitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AreaCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MobNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="image" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BankAccNo" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="IFSCcode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstGrocerDtl" Member="mstGrocerDtls">
+    <Type Name="mstGrocerDtl">
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ShopRegNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ShopName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ShopOwnName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShopOwnAdhar" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="ShopAddr" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Lattitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AreaCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MobNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="image" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BankAccNumber" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="IFSCcode" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstMenu" Member="mstMenus">
+    <Type Name="mstMenu">
+      <Column Name="MenuId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NodeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ParentNodeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="KeyWords" Type="System.String" DbType="NVarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MenuSequence" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Flag" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="mstMenu_tbl_UserRoleWiseMenu" Member="tbl_UserRoleWiseMenus" ThisKey="MenuId" OtherKey="MenuId" Type="tbl_UserRoleWiseMenu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstState" Member="mstStates">
+    <Type Name="mstState">
+      <Column Name="StateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StateName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(20,18)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(20,18)" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mstUserCategory" Member="mstUserCategories">
+    <Type Name="mstUserCategory">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RedirectUrl" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Order_Rating" Member="Order_Ratings">
+    <Type Name="Order_Rating">
+      <Column Name="RateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustOrdId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegistrationInfo" Member="RegistrationInfos">
+    <Type Name="RegistrationInfo">
+      <Column Name="RegId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegistrationDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_CartDtl" Member="tbl_CartDtls">
+    <Type Name="tbl_CartDtl">
+      <Column Name="cartID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrocerRateID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CustmerOdrId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Size" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ContactUS" Member="tbl_ContactUS">
+    <Type Name="tbl_ContactUS">
+      <Column Name="ContID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_CustDeliveryAddressDtl" Member="Tbl_CustDeliveryAddressDtls">
+    <Type Name="Tbl_CustDeliveryAddressDtl">
+      <Column Name="CustAddrId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustFullName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="AltMobileNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CityId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Deliverytype" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Odr_Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CustOrdId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CustLName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DtlPaymentgateway" Member="tbl_DtlPaymentgateways">
+    <Type Name="tbl_DtlPaymentgateway">
+      <Column Name="MID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ORDER_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CUST_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TXN_AMOUNT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CHANNEL_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WEBSITE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CHECKSUMHASH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MOBILE_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="INDUSTRY_TYPE_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CALLBACK_URL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PAYMENT_MODE_ONLY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AUTH_MODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PAYMENT_TYPE_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_GrocerOrderconfirmList" Member="Tbl_GrocerOrderconfirmLists">
+    <Type Name="Tbl_GrocerOrderconfirmList">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_GrocerRateDtl" Member="tbl_GrocerRateDtls">
+    <Type Name="tbl_GrocerRateDtl">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_HeaderImage" Member="tbl_HeaderImages">
+    <Type Name="tbl_HeaderImage">
+      <Column Name="HeaderId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HeaderImage" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_HomeDelChrg" Member="tbl_HomeDelChrgs">
+    <Type Name="tbl_HomeDelChrg">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HomeDelCrhg" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DelyType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ItemListDtl" Member="tbl_ItemListDtls">
+    <Type Name="tbl_ItemListDtl">
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BrandName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsHomePage" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RegularItems" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ItemQtyDtl" Member="tbl_ItemQtyDtls">
+    <Type Name="tbl_ItemQtyDtl">
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsShow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_mstUserRole" Member="tbl_mstUserRoles">
+    <Type Name="tbl_mstUserRole">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tbl_mstUserRole_tbl_UserRoleWiseMenu" Member="tbl_UserRoleWiseMenus" ThisKey="CategoryId" OtherKey="CategoryId" Type="tbl_UserRoleWiseMenu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_orderConfirm" Member="tbl_orderConfirms">
+    <Type Name="tbl_orderConfirm">
+      <Column Name="CustOrdId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderAmount" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DeliType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Time/Date]" Member="Time_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PaymentMode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Delivery_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Toatal_price" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Deli_day" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Deliver_Charge" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="Odr_status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Complt_Odr" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="CustAddrID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConfirmOdrID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_PendingOdr" Member="tbl_PendingOdrs">
+    <Type Name="tbl_PendingOdr">
+      <Column Name="OdrstusID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Addr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderDt" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Totalprice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Orderstatus" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OdrID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_ProductListDtl" Member="tbl_ProductListDtls">
+    <Type Name="tbl_ProductListDtl">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IsHomePage" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RegularItems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductNameMA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_SubArea" Member="tbl_SubAreas">
+    <Type Name="tbl_SubArea">
+      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubAreaName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AreaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_SubCategoryDtl" Member="tbl_SubCategoryDtls">
+    <Type Name="tbl_SubCategoryDtl">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CatId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsHomePage" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RegularItems" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_UserRoleWiseMenu" Member="tbl_UserRoleWiseMenus">
+    <Type Name="tbl_UserRoleWiseMenu">
+      <Column Name="CatMenuId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MenuId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="mstMenu_tbl_UserRoleWiseMenu" Member="mstMenu" ThisKey="MenuId" OtherKey="MenuId" Type="mstMenu" IsForeignKey="true" />
+      <Association Name="tbl_mstUserRole_tbl_UserRoleWiseMenu" Member="tbl_mstUserRole" ThisKey="CategoryId" OtherKey="CategoryId" Type="tbl_mstUserRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="sgbauni_dbkalakruti.mst_DeliveryBoyCharges" Member="mst_DeliveryBoyCharges">
+    <Type Name="mst_DeliveryBoyCharge">
+      <Column Name="DrrateId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_DeliveryAction" Member="Tbl_DeliveryActions">
+    <Type Name="Tbl_DeliveryAction">
+      <Column Name="ActId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActFlag" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ActByCategory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="drDeliCharges" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_DeliveryBoy_Odr" Member="tbl_DeliveryBoy_Odrs">
+    <Type Name="tbl_DeliveryBoy_Odr">
+      <Column Name="Deli_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cust_Name" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Cust_Address" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Cust_Mob" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Total_Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Paymet_Method" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPick" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDelivered" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CustOdr_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deli_BoyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConfirmOdrID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Flag" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CatName1" Method="CatName1">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CatName1Result">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CatName2" Method="CatName2">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CatName2Result">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CatName3" Method="CatName3">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CatName3Result">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CatName4" Method="CatName4">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CatName4Result">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CatName5" Method="CatName5">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CatName5Result">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CatName6" Method="CatName6">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CatName6Result">
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SearchProduct" Method="SearchProduct">
+    <Parameter Name="ProductId" Parameter="productId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SearchProductResult">
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ShopCart" Method="ShopCart">
+    <Parameter Name="CustId" Parameter="custId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ShopCartResult">
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="BrandName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CartId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_AcceptItemList" Method="sp_AcceptItemList">
+    <Parameter Name="CustOdr_ID" Parameter="custOdr_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_AcceptItemListResult">
+      <Column Name="cartID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="productDtl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productPkgQty" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cartID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustmerOdrId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_babycare" Method="sp_babycare">
+    <ElementType Name="sp_babycareResult">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IsHomePage" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cartregularItems" Method="sp_cartregularItems">
+    <Parameter Name="prodId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_cartregularItemsResult">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CustOrderList" Method="SP_CustOrderList">
+    <Parameter Name="CustOdr_ID" Parameter="custOdr_ID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_CustOrderListResult">
+      <Column Name="cartID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="productDtl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productPkgQty" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cartID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustmerOdrId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GroceryStaples" Method="sp_GroceryStaples">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GroceryStaplesResult">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ItemsDescripation" Method="sp_ItemsDescripation">
+    <Parameter Name="ItemId" Parameter="itemId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ItemsDescripationResult">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_MainItems" Method="SP_MainItems">
+    <ElementType Name="SP_MainItemsResult">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalSell" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_MaxCustAddid" Method="Sp_MaxCustAddid">
+    <ElementType Name="Sp_MaxCustAddidResult">
+      <Column Name="CustAddrId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RegularItems" Method="sp_RegularItems">
+    <ElementType Name="sp_RegularItemsResult">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RegularItems1" Method="sp_RegularItems1">
+    <ElementType Name="sp_RegularItems1Result">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_RegularItemsMarathi" Method="sp_RegularItemsMarathi">
+    <ElementType Name="sp_RegularItemsMarathiResult">
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RegularItems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_RptCustItemList" Method="SP_RptCustItemList">
+    <Parameter Name="CustOdrID" Parameter="custOdrID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_RptCustItemListResult">
+      <Column Name="cartID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="productDtl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productPkgQty" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustFullName" Type="System.String" DbType="NVarChar(151)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cartID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustmerOdrId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_RptPendingItem" Method="SP_RptPendingItem">
+    <ElementType Name="SP_RptPendingItemResult">
+      <Column Name="cartID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="productDtl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productPkgQty" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cartID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustmerOdrId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SellingItems" Method="sp_SellingItems">
+    <ElementType Name="sp_SellingItemsResult">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="totalSell" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Sp_subcategoru6" Method="Sp_subcategoru6">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Sp_subcategoru6Result">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_subcategory1" Method="sp_subcategory1">
+    <ElementType Name="sp_subcategory1Result">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_subcategory2" Method="sp_subcategory2">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_subcategory2Result">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_subcategory3" Method="sp_subcategory3">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_subcategory3Result">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_subcategory4" Method="sp_subcategory4">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_subcategory4Result">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[sp_subcategory5,6]" Method="sp_subcategory5_6">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_subcategory5_6Result">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_subcategory8" Method="sp_subcategory8">
+    <ElementType Name="sp_subcategory8Result">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_subcategory9" Method="sp_subcategory9">
+    <ElementType Name="sp_subcategory9Result">
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spBrandItems" Method="spBrandItems">
+    <Parameter Name="prodId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spBrandItemsResult">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spBrandItems2" Method="spBrandItems2">
+    <ElementType Name="spBrandItems2Result">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCartGTotal" Method="spCartGTotal">
+    <Parameter Name="CustId" Parameter="custId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spCartGTotalResult">
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCategory" Method="spCategory">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spCategoryResult">
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SPCustCartDtl" Method="SPCustCartDtl">
+    <Parameter Name="CustId" Parameter="custId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SPCustCartDtlResult">
+      <Column Name="cartID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="productName" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="productDtl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productPkgQty" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cartID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SPDeliveryOdr" Method="SPDeliveryOdr">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SPDeliveryOdrResult">
+      <Column Name="CustOrdId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustFullName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Toatal_price" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Odr_status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="complt_Odr" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spDiscountItems" Method="spDiscountItems">
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spDiscountItemsResult">
+      <Column Name="GrocerRateId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="details" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Product" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SPListOdr" Method="SPListOdr">
+    <Parameter Name="CustOdr_ID" Parameter="custOdr_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GrocerID" Parameter="grocerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SPListOdrResult">
+      <Column Name="cartID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="productDtl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="productPkgQty" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OfferRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cartID1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MRP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustmerOdrId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SPPendingOdr" Method="SPPendingOdr">
+    <Parameter Name="GrocerID" Parameter="grocerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SPPendingOdrResult">
+      <Column Name="CustId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConfirmOdrID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(151)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="Toatal_price" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Complt_Odr" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spProduct" Method="spProduct">
+    <Parameter Name="subcatId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spProductResult">
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SPRptItemList" Method="SPRptItemList">
+    <Parameter Name="CustOdr_ID" Parameter="custOdr_ID" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SPRptItemListResult">
+      <Column Name="CustOrdId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustFullName" Type="System.String" DbType="NVarChar(151)" CanBeNull="true" />
+      <Column Name="CustId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MobileNo" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="EmailId" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="[Time/Date]" Member="Time_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConfirmOdrID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spSubCategory" Method="spSubCategory">
+    <Parameter Name="CatID" Parameter="catID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GrocerId" Parameter="grocerId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spSubCategoryResult">
+      <Column Name="GrocerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubCatId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SubCatName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stockItemList" Method="stockItemList">
+    <Parameter Name="ProId" Parameter="proId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="stockItemListResult">
+      <Column Name="Image" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="ItemQtyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Qty" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="sgbauni_dbkalakruti.SearchProduct" Method="SearchProduct1">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SearchProductResult1">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="sgbauni_dbkalakruti.SP_SearchProduct" Method="SP_SearchProduct">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SP_SearchProductResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="sgbauni_dbkalakruti.SPSearchProduct" Method="SPSearchProduct">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SPSearchProductResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(301)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
